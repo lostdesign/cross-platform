@@ -1,0 +1,37 @@
+{
+  "name": "cross-platform",
+  "version": "0.0.0-development",
+  "description": "A repository to quickly build apps for any platform using web technology.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run vue:dev\" \"npm run tauri:dev\"",
+    "vue:dev": "npm run dev --workspace=vue",
+    "tauri:dev": "npm run tauri dev --workspace=tauri",
+    "vue:build": "npm run build --workspace=vue",
+    "tauri:build": "npm run tauri build --workspace=tauri",
+    "build": "concurrently \"npm run vue:build\" \"npm run tauri:build\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lostdesign/cross-platform.git"
+  },
+  "keywords": [
+    "tauri",
+    "capacitor",
+    "vue",
+    "tailwind"
+  ],
+  "author": "André Weller <info@lost.design>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lostdesign/cross-platform/issues"
+  },
+  "homepage": "https://github.com/lostdesign/cross-platform#readme",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^7.1.0"
+  }
+}
